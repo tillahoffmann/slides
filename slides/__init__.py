@@ -1,45 +1,46 @@
 from flask.app import Flask, request
-from flask import make_response, render_template, Response, send_from_directory
+from flask import render_template, Response, send_from_directory
 import frontmatter
 from pathlib import Path
+import yaml
+from .util import apply_defaults_and_validate
 
-
-DEFAULT_METADATA = {
-    "theme": "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/white.min.css",
-    "highlight_theme": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/"
-    "default.min.css",
-}
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def index() -> str:
-    return render_template("index.html")
-
-
-@app.route("/slides/")
-def document() -> str:
     """
-    Get the slides for the given markdown document.
+    Return a landing page to select and launch slides without the browser toolbar.
     """
-    if not (document := request.args.get("document")):
-        return make_response("specify a document with ?document=markdown/path", 400)
-    metadata = DEFAULT_METADATA | frontmatter.load(document).metadata
+    # Return the landing page if there is no document.
+    document = request.args.get("document")
+    if not document:
+        return render_template("index.html", document_options=Path.cwd().glob("*.md"))
+
+    # Process the document and render it as slides.
+    with open(Path(__file__).parent / "frontmatter.schema.yaml") as fp:
+        schema = yaml.safe_load(fp)
+    metadata = apply_defaults_and_validate(frontmatter.load(document).metadata, schema)
+    # Apply non-trivial transformations.
     if isinstance(css := metadata.setdefault("css", []), str):
         metadata["css"] = [css]
+    metadata.setdefault("title", document)
     return render_template("slides.html", document=document, **metadata)
 
 
-@app.route("/markdown/")
-def markdown() -> str:
+@app.route("/md/<document>/")
+def markdown_content(document: str) -> str:
     """
-    Get the raw markdown code.
+    Get the raw markdown content.
     """
-    document = request.args["document"]
     return frontmatter.load(document).content
 
 
-@app.route('/assets/<path:filename>')
+@app.route('/<path:filename>')
 def assets(filename: Path) -> Response:
+    """
+    Send assets as is if the pattern is not matched by another handler.
+    """
     return send_from_directory(Path.cwd(), filename)

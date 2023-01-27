@@ -1,17 +1,55 @@
-<html>
-    <head>
-        <script>
-            function openSlides() {
-                let path = document.getElementById("path").value;
-                let url = `/slides/?document=${path}`;
-                open(url, path, 'width=800,height=640');
-            }
-        </script>
-    </head>
-    <body>
-        <form onsubmit="openSlides()" action="/" method="GET">
-            <input id="path" name="path" placeholder="path/to/slides.md" value="{{ request.args.get('path', 'slides.md') }}">
-            <button>Open Slides</button>
-        </form>
-    </body>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Markdown Slides</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container" style="max-width: 600px">
+    <h1>Markdown Slides</h1>
+    <form id="form">
+      <div class="mb-3">
+        <label for="document" class="form-label">Markdown document</label>
+        <input class="form-control" list="documentOptions" id="document" placeholder="Type to search...">
+        <datalist id="documentOptions">
+          {% for option in document_options %}
+          <option value="{{ option.name }}"></option>
+          {% endfor %}
+        </datalist>
+      </div>
+      <div class="mb-3 form-check">
+        <input checked type="checkbox" class="form-check-input" id="hideBrowserToolbar">
+        <label class="form-check-label" for="hideBrowserToolbar">Hide browser toolbar</label>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exportToPdf">
+        <label class="form-check-label" for="exportToPdf">Export to PDF</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Launch Slides</button>
+    </form>
+  </div>
+  <script>
+    let form = document.getElementById("form");
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      let elements = event.target.elements;
+      let document = elements["document"].value;
+      let parts = [`/?document=${document}`];
+      if (elements["exportToPdf"].checked) {
+        parts.push("print-pdf");
+      }
+      let options = null;
+      if (elements["hideBrowserToolbar"].checked) {
+        options = "width=800,height=640";
+      }
+      open(parts.join("&"), document, options);
+    });
+  </script>
+
+</body>
+
 </html>

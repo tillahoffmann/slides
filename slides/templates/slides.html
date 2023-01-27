@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
-    <link rel="stylesheet" href="{{ theme }}">
-    <link rel="stylesheet" href="{{ highlight_theme }}">
-    {% for x in css %}
-    <link rel="stylesheet" href="{{ x }}">
-    {% endfor %}
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
-        <section data-markdown="/markdown/?document={{ document }}" data-separator-vertical="\n\^\^\^\n" data-separator-notes="^Note:"></section>
-      </div>
+
+<head>
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
+  <link rel="stylesheet" href="{{ theme }}">
+  <link rel="stylesheet" href="{{ highlight_theme }}">
+  {% for x in css %}
+  <link rel="stylesheet" href="{{ x }}">
+  {% endfor %}
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown="/md/{{ document }}" data-separator-vertical="\n\^\^\^\n" data-separator-notes="^Note:">
+      </section>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/markdown/markdown.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/notes/notes.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/math.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/katex.min.js"></script>
-    <script>
-        Reveal.initialize({
-            hash: true,
-            controlsTutorial: false,
-            plugins: [
-              RevealHighlight,
-              RevealMarkdown,
-              RevealMath.KaTeX,
-              RevealNotes,
-            ],
-        });
-    </script>
-  </body>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/markdown/markdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/notes/notes.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/math.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/katex.min.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controlsTutorial: false,
+      plugins: [
+        RevealMarkdown,  // Must be loaded before RevealHighlight.
+        RevealHighlight,
+        RevealMath.KaTeX,
+        RevealNotes,
+      ],
+    });
+  </script>
+</body>
+
 </html>
