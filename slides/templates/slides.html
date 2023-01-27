@@ -4,8 +4,8 @@
 <head>
   <title>{{ title }}</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
-  <link rel="stylesheet" href="{{ theme }}">
-  <link rel="stylesheet" href="{{ highlight_theme }}">
+  {% if theme %}<link rel="stylesheet" href="{{ theme }}">{% endif %}
+  {% if highlight_theme %}<link rel="stylesheet" href="{{ highlight_theme }}">{% endif %}
   {% for x in css %}
   <link rel="stylesheet" href="{{ x }}">
   {% endfor %}

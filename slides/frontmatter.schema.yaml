@@ -7,11 +7,15 @@ properties:
     type: string
   theme:
     description: A reveal.js theme (see https://revealjs.com/themes/ for a gallery). Set to `null` to not include any theme.
-    type: string
+    type:
+    - string
+    - "null"
     default: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/white.min.css
   highlight_theme:
     description: A highlight.js theme (see https://highlightjs.org/static/demo/ for a gallery). Set to `null` to not include any theme.
-    type: string
+    type:
+    - string
+    - "null"
     default: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css
   css:
     description: One or more additional CSS files to include.
