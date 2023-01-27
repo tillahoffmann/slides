@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://json-schema.org/draft-07/schema
+$schema: https://json-schema.org/draft-07/schema
+type: object
+properties:
+  title:
+    description: Title of the presentation. Defaults to the filename of the presentation.
+    type: string
+  theme:
+    description: A reveal.js theme (see https://revealjs.com/themes/ for a gallery). Set to `null` to not include any theme.
+    type: string
+    default: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/white.min.css
+  highlight_scheme:
+    description: A highlight.js theme (see https://highlightjs.org/static/demo/ for a gallery). Set to `null` to not include any theme.
+    type: string
+    default: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css
+  css:
+    description: One or more additional CSS files to include.
+    oneOf:
+    - type: string
+    - type: array
+      items:
+        type: string
+  meta:
+    description: Additional unstructured metadata.
+    type: object
+additionalProperties: false
