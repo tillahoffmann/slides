@@ -10,7 +10,7 @@
     </head>
     <body>
         <form onsubmit="openSlides()" action="/" method="GET">
-            <input id="path" name="path" placeholder="path/to/slides.md" value="{{ request.args.get('path') }}">
+            <input id="path" name="path" placeholder="path/to/slides.md" value="{{ request.args.get('path', 'slides.md') }}">
             <button>Open Slides</button>
         </form>
     </body>
