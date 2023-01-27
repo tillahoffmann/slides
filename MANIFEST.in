@@ -1,2 +1,3 @@
+include slides/frontmatter.schema.yaml
 graft slides/static
 graft slides/templates
