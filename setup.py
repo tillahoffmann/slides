@@ -7,7 +7,9 @@ setup(
     packages=find_packages(),
     install_requires=[
         "flask",
+        "jsonschema",
         "python-frontmatter",
+        "pyyaml",
     ],
     include_package_data=True,
 )
