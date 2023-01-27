@@ -1,6 +1,8 @@
 from flask.app import Flask, request
-from flask import make_response, render_template
+from flask import make_response, render_template, Response, send_from_directory
 import frontmatter
+from pathlib import Path
+
 
 DEFAULT_METADATA = {
     "theme": "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/white.min.css",
@@ -36,3 +38,8 @@ def markdown() -> str:
     """
     document = request.args["document"]
     return frontmatter.load(document).content
+
+
+@app.route('/assets/<path:filename>')
+def assets(filename: Path) -> Response:
+    return send_from_directory(Path.cwd(), filename)
