@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <script>
+            function openSlides() {
+                let path = document.getElementById("path").value;
+                let url = `/slides/?document=${path}`;
+                open(url, path, 'width=800,height=640');
+            }
+        </script>
+    </head>
+    <body>
+        <form onsubmit="openSlides()" action="/" method="GET">
+            <input id="path" name="path" placeholder="path/to/slides.md" value="{{ request.args.get('path') }}">
+            <button>Open Slides</button>
+        </form>
+    </body>
+</html>
