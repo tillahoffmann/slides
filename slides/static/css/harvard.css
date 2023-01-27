@@ -6,7 +6,8 @@
     --r-link-color-dark: #00658c;
 }
 
-code {
+/* Style inline code except when we're using it to wrap math. */
+code:not(:has(.katex-display, mjx-container)) {
     color: #5F6962;
     border-radius: 6px;
     box-sizing: border-box;
