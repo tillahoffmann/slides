@@ -1,0 +1,3 @@
+-e file:.
+flake8
+pip-tools
