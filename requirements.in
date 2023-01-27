@@ -2,3 +2,4 @@
 flake8
 pip-tools
 pytest
+twine
