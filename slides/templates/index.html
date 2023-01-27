@@ -14,10 +14,10 @@
     <form id="form">
       <div class="mb-3">
         <label for="document" class="form-label">Markdown document</label>
-        <input class="form-control" list="documentOptions" id="document" placeholder="Type to search...">
+        <input class="form-control" list="documentOptions" id="document" placeholder="Type to search..." {% if document_options %}value="{{ document_options[0] }}"{% endif %}>
         <datalist id="documentOptions">
           {% for option in document_options %}
-          <option value="{{ option.name }}"></option>
+          <option value="{{ option }}"></option>
           {% endfor %}
         </datalist>
       </div>

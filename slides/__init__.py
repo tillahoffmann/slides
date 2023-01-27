@@ -17,7 +17,8 @@ def index() -> str:
     # Return the landing page if there is no document.
     document = request.args.get("document")
     if not document:
-        return render_template("index.html", document_options=Path.cwd().glob("*.md"))
+        document_options = [document.name for document in Path.cwd().glob("*.md")]
+        return render_template("index.html", document_options=document_options)
 
     # Process the document and render it as slides.
     with open(Path(__file__).parent / "frontmatter.schema.yaml") as fp:
