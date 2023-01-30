@@ -35,6 +35,40 @@ F(x)&=\int dx\, \cos(x)\\
 
 ---
 
+<div class="col">
+
+Create columns using a `div` with `class="col"`. There must be an empty line after the `div` for embedded markdown to render.
+</div>
+
+<div class="col">
+
+```markdown
+<div class="col-6">
+
+Content. Use `col-4` or
+`col-6` to create 40% and
+60% width columns,
+respectively. Make sure the
+numbers add up to 10 or
+subsequent content may float.
+</div>
+```
+</div>
+
+---
+
+Code can be included with [code fences](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks).
+
+```python
+def add(a: int, b: int) -> int:
+    """
+    Add two integers.
+    """
+    return a + b
+```
+
+---
+
 Reveal.js supports special syntax to set arbitrary HTML attributes on [slides](https://revealjs.com/markdown/#slide-attributes), such as this background gradient.
 
 <!-- .slide: data-background-gradient="radial-gradient(white, #E5CAC9)" -->
@@ -48,18 +82,6 @@ This also works for [elements](https://revealjs.com/markdown/#element-attributes
 
 ```markdown
 - green bullet point <!-- .element: style="color: #4db848" -->
-```
-
----
-
-Code can be included with [code fences](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks).
-
-```python
-def add(a: int, b: int) -> int:
-    """
-    Add two integers.
-    """
-    return a + b
 ```
 
 ---
