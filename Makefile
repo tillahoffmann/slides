@@ -14,4 +14,4 @@ lint :
 
 sdist :
 	python setup.py sdist
-	twine check dist/*
+	twine check dist/*.tar.gz
