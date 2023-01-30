@@ -12,6 +12,28 @@ Create stunning presentations using [markdown](https://www.markdownguide.org) po
 
 ---
 
+<div class="col">
+
+Create columns using a `div` with `class="col"`. There must be an empty line after the `div` for embedded markdown to render.
+</div>
+
+<div class="col">
+
+```markdown
+<div class="col-6">
+
+Content. Use `col-4` or
+`col-6` to create 40% and
+60% width columns,
+respectively. Make sure the
+numbers add up to 10 or
+subsequent content may float.
+</div>
+```
+</div>
+
+---
+
 This README is a slide deck. Run `pip install markdown-slides` from the command line to install the package. Then run `slides` to launch a presentation server and view the deck.
 
 ---

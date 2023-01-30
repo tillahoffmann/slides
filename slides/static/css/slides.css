@@ -1,0 +1,12 @@
+div[class^="col"] {
+    float: left;
+    width: 50%;
+}
+
+div.col-4 {
+    width: 40%;
+}
+
+div.col-6 {
+    width: 60%;
+}
