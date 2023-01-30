@@ -12,7 +12,7 @@ Create stunning presentations using [markdown](https://www.markdownguide.org) po
 
 ---
 
-This README is a slide deck. Run `pip install markdown-slides` from the command line to install the package. Then run `slides` to launch a presentation server and view the deck.
+This README is a slide deck. Run `pip install markdown-slides` from the command line to install the package. Then run `slides --demo` to launch a presentation server and view the deck.
 
 ---
 
