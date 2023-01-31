@@ -86,6 +86,18 @@ This also works for [elements](https://revealjs.com/markdown/#element-attributes
 
 ---
 
+Want a full-screen image? Use the [`data-background-image`](https://revealjs.com/backgrounds/#image-backgrounds) attribute, as illustrated on the next slide with a penguin. [unsplash.com](https://unsplash.com) has a great collection of free images.
+
+```html
+<!-- .slide: data-background-image="[path-to-image-file]"-->
+```
+
+---
+
+<!--.slide: data-background-image="https://images.unsplash.com/photo-1598439210625-5067c578f3f6?w=1024&q=80"-->
+
+---
+
 For labeled slides, we can link back to them. E.g., the [next one](#next-slide).
 
 ---
