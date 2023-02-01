@@ -126,6 +126,14 @@ Also note the vertical slide below. 👇
 
 ---
 
+| Symbol     | Description                                              |
+| ---------- | -------------------------------------------------------- |
+| `$n$`      | Number of samples                                        |
+| `$x_{ij}$` | `$j^\text{th}$` covariate for the `$i^\text{th}$` sample |
+| `$y_i$`    | target for the `$i^\text{th}$` sample                    |
+
+---
+
 [Jekyll-style frontmatter](https://jekyllrb.com/docs/front-matter/) can be used to configure the presentation. See [`slides/frontmatter.schema.yaml`](slides/frontmatter.schema.yaml) for details.
 
 ---

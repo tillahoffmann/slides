@@ -37,3 +37,21 @@ code:not(:has(.katex-display, .katex, mjx-container)) {
     float: right;
     font-family: serif;
 }
+
+.reveal table td {
+    border: none;
+}
+
+.reveal table th {
+    background-color: #F0F0F2;
+    border-bottom: #D6D6D7 solid;
+}
+
+.reveal table {
+    border: #D6D6D7 solid;
+    border-radius: 10px;
+    /* needed for borders to show: https://stackoverflow.com/a/4932321/1150961 */
+    border-collapse: separate;
+    /* needed to avoid the child clipping the border: https://stackoverflow.com/a/3724210/1150961 */
+    overflow: hidden;
+}
