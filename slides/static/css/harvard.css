@@ -21,3 +21,18 @@ code:not(:has(.katex-display, .katex, mjx-container)) {
 .contrast-slide {
     background-color: var(--brand-color) !important;
 }
+
+.reveal blockquote {
+    box-shadow: none;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: #F0F0F2;
+    border-left: #D6D6D7 0.2em solid;
+    text-align: left;
+    overflow: auto;  /*needed for the author float to stay inside the blockquote*/
+}
+
+.reveal blockquote p.author {
+    float: right;
+    font-family: serif;
+}
