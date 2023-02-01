@@ -110,6 +110,8 @@ This is a slide labeled with the id `next-slide`.
 <!-- .slide: id="next-slide" -->
 ```
 
+Also note the vertical slide below. 👇
+
 ^^^
 
 [Vertical slides](https://revealjs.com/vertical-slides/) can be used to logically group content. They are created using the `^^^` separator between slides.
