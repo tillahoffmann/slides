@@ -30,6 +30,7 @@ code:not(:has(.katex-display, .katex, mjx-container)) {
     border-left: #D6D6D7 0.2em solid;
     text-align: left;
     overflow: auto;  /*needed for the author float to stay inside the blockquote*/
+    border-radius: 10px;
 }
 
 .reveal blockquote p.author {
