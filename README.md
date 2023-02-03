@@ -16,9 +16,9 @@ This README is a slide deck. Run `pip install markdown-slides` from the command 
 
 ---
 
-Here is a simple figure.
+![](figure.png) <!-- .element: class="right" -->
 
-![](figure.png)
+Here is a simple figure floated to the right.
 
 Note:
 
