@@ -6,7 +6,7 @@ with open("README.md") as fp:
 
 setup(
     name="markdown-slides",
-    version="0.1.7",
+    version="0.1.8",
     packages=find_packages(),
     install_requires=[
         "flask",

@@ -27,4 +27,3 @@ properties:
   meta:
     description: Additional unstructured metadata.
     type: object
-additionalProperties: false
