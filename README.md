@@ -134,6 +134,16 @@ Also note the vertical slide below. 👇
 
 ---
 
+- important
+- bullets
+
+and
+
+1. numbered
+2. items
+
+---
+
 [Jekyll-style frontmatter](https://jekyllrb.com/docs/front-matter/) can be used to configure the presentation. See [`slides/frontmatter.schema.yaml`](slides/frontmatter.schema.yaml) for details.
 
 ---

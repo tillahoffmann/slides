@@ -55,3 +55,15 @@ code:not(:has(.katex-display, .katex, mjx-container)) {
     /* needed to avoid the child clipping the border: https://stackoverflow.com/a/3724210/1150961 */
     overflow: hidden;
 }
+
+.reveal ul {
+    list-style: none;
+}
+
+.reveal ul li::before {
+    color: var(--brand-color);
+    content: "⏵";
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
