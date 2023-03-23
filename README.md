@@ -22,7 +22,7 @@ Here is a simple figure floated to the right.
 
 Note:
 
-Speaker notes start with `Note:` on each slide and can be accessed by hitting the `S` code.
+Speaker notes start with `Note:` on each slide and can be accessed by hitting the `S` code. They support `$m\times a^{th}$`.
 
 ---
 

@@ -39,6 +39,19 @@
         smartypants: true,
       },
     });
+
+    // Monkeypatch the "open" method to inject css that hides the assistive mathml.
+    window._open = window.open;
+    window.open = (url, target, features) => {
+      let child = window._open(url, target, features);
+      child.onload = "alert(123);"
+      setTimeout(() => {
+        let element = child.document.createElement("style");
+        element.textContent = "#speaker-controls .katex-html { display: none; }";
+        child.document.head.appendChild(element);
+      }, 500);
+      return child;
+    }
   </script>
 </body>
 
