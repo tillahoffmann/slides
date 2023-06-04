@@ -24,6 +24,17 @@ properties:
     - type: array
       items:
         type: string
+  # https://revealjs.com/slide-numbers/
+  slide_number:
+    description: If and how to display slide numbers.
+    default: c/t
+    enum:
+    - true
+    - false
+    - h.v
+    - h/v
+    - c
+    - c/t
   meta:
     description: Additional unstructured metadata.
     type: object

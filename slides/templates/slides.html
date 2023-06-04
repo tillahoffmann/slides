@@ -38,6 +38,7 @@
       markdown: {
         smartypants: true,
       },
+      slideNumber: {{ slide_number | tojson }},
     });
 
     // Monkeypatch the "open" method to inject css that hides the assistive mathml.
